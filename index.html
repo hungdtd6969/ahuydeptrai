@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Rừng Đêm - Game sinh tồn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;500;700&family=Pirata+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="game"></canvas>
+<div id="vignette"></div>
+
+<div id="hud">
+  <div class="vitals">
+    <div class="hpbar"><div id="hpFill"></div><div id="hpPending"></div><span id="hpText">100</span></div>
+    <div class="res">
+      <span class="chip wood"><i></i><b id="wood">0</b> gỗ</span>
+      <span class="chip stone"><i></i><b id="stone">0</b> đá</span>
+    </div>
+  </div>
+
+  <div class="topright">
+    <div class="stats"><span id="timer">0:00</span><span class="kl"><b id="kills">0</b> hạ gục</span></div>
+    <button id="craftBtn">Chế tạo <kbd>C</kbd></button>
+  </div>
+  <div id="craftPanel" hidden></div>
+
+  <div id="buildHint" hidden></div>
+  <div id="toast"></div>
+  <div id="banner"></div>
+
+  <div id="hotbar"></div>
+  <div class="hint">WASD di chuyển · giữ chuột trái đánh / chặt / đục · 1-5 đổi vũ khí · C chế tạo · Z / X tường · F lửa trại</div>
+
+  <div id="joyBase"><div id="joyKnob"></div></div>
+  <button id="atkBtn">Đánh</button>
+  <button id="cancelBuild" hidden>Thôi đặt</button>
+</div>
+
+<div id="menu" class="overlay">
+  <div class="card">
+    <h1>Rừng Đêm</h1>
+    <p class="lead">Chặt cây, đục đá, dựng tường và rèn vũ khí. Quái vật kéo đến từ mọi hướng, mỗi cú đánh làm máu tụt dần. Sống càng lâu càng tốt.</p>
+    <ul>
+      <li><b>Chặt cây, đục đá</b> bằng cách đánh vào chúng để lấy gỗ và đá.</li>
+      <li><b>Chế tạo</b> gậy, dao, rìu, giáo và <b>nâng cấp</b> để tăng sát thương.</li>
+      <li><b>Dựng tường gỗ / đá</b> chặn quái, <b>đốt lửa trại</b> để hồi máu.</li>
+      <li>Mắt đỏ trong bóng tối là quái đang tới. Mũi tên đỏ ở rìa màn hình chỉ hướng.</li>
+    </ul>
+    <button id="startBtn" class="primary">Bắt đầu sinh tồn</button>
+    <p class="small" id="bestText">Nhấn Enter hoặc nút để vào game.</p>
+  </div>
+</div>
+
+<div id="gameover" class="overlay" hidden>
+  <div class="card">
+    <h1 class="dead">Bạn đã gục ngã</h1>
+    <div id="goStats" class="gostats"></div>
+    <button id="retryBtn" class="primary">Chơi lại</button>
+  </div>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/sfx.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/input.js"></script>
+<script src="js/world.js"></script>
+<script src="js/player.js"></script>
+<script src="js/monsters.js"></script>
+<script src="js/craft.js"></script>
+<script src="js/game.js"></script>
+<script src="js/render.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
