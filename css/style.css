@@ -61,6 +61,12 @@ body.playing #hud { opacity: 1; }
 
 .hint { position: absolute; left: 14px; bottom: calc(14px + var(--safe-b)); max-width: 230px; color: var(--ash); font-size: 13px; line-height: 1.35; text-shadow: 0 1px 2px #000; }
 #buildHint { position: absolute; left: 50%; transform: translateX(-50%); bottom: calc(86px + var(--safe-b)); background: rgba(70,40,10,.9); border: 1px solid var(--ember); padding: 6px 14px; border-radius: 3px; font-size: 15px; text-align: center; max-width: 90vw; }
+#bossBar { position: absolute; left: 50%; transform: translateX(-50%); top: calc(112px + var(--safe-t)); width: min(460px, 92vw); text-align: center; }
+#bossName { font-family: var(--display); font-size: 22px; color: #ffd24a; text-shadow: 0 2px 8px #000; letter-spacing: .5px; }
+.bbar { height: 14px; margin-top: 2px; background: rgba(8,12,9,.85); border: 2px solid #5a4a2a; border-radius: 3px; overflow: hidden; }
+#bossFill { height: 100%; width: 100%; background: linear-gradient(#e0a030, #a8601c); transition: width .1s linear; }
+#bossBar.rage #bossFill { background: linear-gradient(#e0553f, #8d1f16); }
+#bossBar.rage #bossName { color: #ff6a4a; }
 #toast { position: absolute; left: 50%; top: calc(70px + var(--safe-t)); transform: translate(-50%, -6px); background: rgba(8,12,9,.88); border: 1px solid #4a5e4d; padding: 7px 16px; border-radius: 3px; font-size: 16px; opacity: 0; transition: opacity .2s, transform .2s; text-align: center; max-width: 88vw; }
 #toast.show { opacity: 1; transform: translate(-50%, 0); }
 #banner { position: absolute; left: 0; right: 0; top: 24%; text-align: center; font-family: var(--display); font-size: clamp(26px, 5vw, 46px); color: #ff6a4a; text-shadow: 0 2px 12px #000, 0 0 30px rgba(200,40,20,.6); opacity: 0; transition: opacity .4s; padding: 0 12px; }
@@ -93,6 +99,7 @@ h1.dead { color: #e0553f; font-size: clamp(38px, 9vw, 54px); }
 :focus-visible { outline: 2px solid var(--ember); outline-offset: 2px; }
 
 @media (max-width: 700px) {
+  #bossBar { top: calc(100px + var(--safe-t)); }
   #craftPanel { width: min(290px, 70vw); top: calc(100px + var(--safe-t)); max-height: calc(100% - 330px - var(--safe-t) - var(--safe-b)); }
   #toast { top: auto; bottom: calc(92px + var(--safe-b)); left: 14px; transform: translateY(6px); max-width: calc(100vw - 150px); text-align: left; font-size: 15px; }
   #toast.show { transform: none; }
