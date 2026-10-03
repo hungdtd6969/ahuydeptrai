@@ -9,7 +9,7 @@
       this.x = x; this.y = y; this.r = T.r;
       this.hp = T.hp * (1 + diff * 0.12); this.maxHp = this.hp;
       this.dmg = T.dmg * (1 + diff * 0.04);
-      this.speed = T.speed * (1 + Math.min(diff, 6) * 0.075);
+      this.speed = T.speed * (1 + Math.min(diff, 6) * 0.175);
       this.kx = 0; this.ky = 0;
       this.slide = 1; this.slideT = 0;
       this.atkT = U.rand(0.2, T.atkCd);
